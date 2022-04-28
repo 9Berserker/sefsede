@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Style.css">
+    <title>Portafolio BDHZ</title>
+</head>
+<body>
+    <section class="banner">
+        <header>
+        <a href="#" class="logo">Portafolio</a>
+        <div class="toggle"></div>
+    </header>
+    <img src="/icons/brayan.png" class="men">
+    <div class="content">
+        <div class="contentBx">
+            <h4>Hola,</h4>
+            <h2>Soy Brayan De la Hoz</h2>
+            <h3>Programador junior</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Sapiente, dolorum non voluptate, neque et sit laudantium 
+                voluptates quod earum nesciunt qui! Aspernatur, eos impedit dolore quidem sequi 
+                molestias aliquam necessitatibus.</p>
+                <a href="#">Sobre Mi</a>
+                <a href="https://docs.google.com/document/d/16MifKvLWYVQx86k5TPUOpiNzNiLPFqum/edit?usp=sharing&ouid=113970949917030155740&rtpof=true&sd=true">Descargar HV/CV </a>
+        </div>
+    </div>
+    <ul class="sci">
+        <li> <a href="https://wa.link/7u8y5w"><img src="/icons/whatsapp.svg"></a> </li>
+        <li> <a href="https://www.linkedin.com/in/brayan-de-la-hoz-700801213"><img src="/icons/linkedin.svg"></a> </li>
+    </ul>
+    <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Trabajo</a></li>
+        <li><a href="#">Resumen</a></li>
+        <li><a href="https://wa.link/7u8y5w">Contacto</a></li>
+    </ul>
+    <img src="/icons/1.png" class="elements" data-speed="8">
+    <img src="/icons/2.png" class="elements" data-speed="6">
+    <img src="/icons/3.png" class="elements" data-speed="-10">
+    <img src="/icons/4.png" class="elements" data-speed="-6">
+    </section>
+
+    <script> 
+    const toggle = document.querySelector('.toggle');
+    const banner = document.querySelector('.banner');
+    toggle.onclick = function(){
+        toggle.classList.toggle('active');
+        banner.classList.toggle('active');
+    }
+
+
+    function parallax(e){
+        this.querySelectorAll('.elements').forEach(layer => {
+            const speed = layer.getAttribute('data-speed');
+            const x = (window.innerWidth - e.pageX*speed)/100;
+            layer.style.transform = `translateX(${x}px)`;
+        });
+    }
+
+    document.addEventListener("mousemove", parallax);
+    </script>
+</body>
+</html>
